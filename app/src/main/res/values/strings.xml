@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WhoIsIt</string>
+    <string name="action_restart">Restart</string>
+    <string name="person_name">Name:</string>
+    <string name="person_hobby">Hobby:</string>
+    <string name="person_course">Least favourite course:</string>
+    <string name="person_Programming">Favourite programming language:</string>
+    <string name="person_age">Age:</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
