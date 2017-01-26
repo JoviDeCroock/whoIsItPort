@@ -19,7 +19,7 @@ import java.util.List;
 public class PersonReaderHelper extends SQLiteOpenHelper
 {
     //Increment DB_Version on schema change
-    public static final int DATABASE_VERSION = 7;
+    public static final int DATABASE_VERSION = 8;
     public static final String DATABASE_NAME = "Whoisit.db";
     private static final String TABLE_NAME = PersonContract.personEntry.TABLE_NAME;
 
@@ -29,17 +29,17 @@ public class PersonReaderHelper extends SQLiteOpenHelper
 
     public ArrayList<Person> getAllPersons()
     {
-        ArrayList<Person> contactList = new ArrayList<Person>();
+        ArrayList<Person> personList = new ArrayList<Person>();
         String selectQuery = "SELECT  * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                Person p = new Person(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
-                contactList.add(p);
+                Person p = new Person(cursor.getInt(6), cursor.getString(1), cursor.getInt(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                personList.add(p);
             } while (cursor.moveToNext());
         }
-        return contactList;
+        return personList;
     }
 
     @Override

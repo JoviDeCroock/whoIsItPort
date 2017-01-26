@@ -1,46 +1,27 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.jovi.whoisit.views.PersonDetails">
-    <ImageView
-        android:id="@+id/card_image"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:padding="0dip"
-        android:scaleType="fitXY"
-        android:src="@drawable/eliencallens" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/person_name"
-        android:layout_below="@+id/card_image"
-        android:id="@+id/text_name"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/person_age"
-        android:layout_below="@+id/text_name"
-        android:id="@+id/text_age"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/person_Programming"
-        android:layout_below="@+id/text_age"
-        android:id="@+id/text_programming"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/person_course"
-        android:layout_below="@+id/text_programming"
-        android:id="@+id/text_course"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/person_hobby"
-        android:layout_below="@+id/text_course"
-        android:id="@+id/text_hobby"/>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/card_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="250dp"
+                            android:padding="0dip"
+                            android:scaleType="fitXY" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/card_image"
+                            android:text=""
+                            android:id="@+id/person"/>
+                </LinearLayout>
+        </ScrollView>
 </RelativeLayout>

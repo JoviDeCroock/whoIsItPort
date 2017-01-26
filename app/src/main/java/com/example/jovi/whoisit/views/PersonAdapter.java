@@ -22,19 +22,25 @@ import butterknife.ButterKnife;
  * Created by jovi on 1/24/2017.
  */
 
-public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MainViewHolder>
-{
+public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.MainViewHolder> {
 
     private ArrayList<Person> persons;
 
-    public PersonAdapter(ArrayList<Person> p)
-    {
+    public PersonAdapter(ArrayList<Person> p) {
         this.persons = p;
     }
+
 
     public void deletePerson(int id)
     {
         persons.remove(id);
+    }
+
+    public void swap(ArrayList<Person> pers)
+    {
+        persons.clear();
+        persons.addAll(pers);
+        notifyDataSetChanged();
     }
 
     @Override
