@@ -39,6 +39,7 @@ public class PersonOverview extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
         mainOnClickListener = new MainOnclickListener(getContext());
         itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
     }
@@ -46,9 +47,15 @@ public class PersonOverview extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        initDataSet();
         View rootView = inflater.inflate(R.layout.fragment_person_overview, container, false);
         ButterKnife.bind(this, rootView);
+        if(persons==null)
+        {
+            initDataSet();
+        }else{
+            adapter = new PersonAdapter(persons);
+            mRcyclerView.setAdapter(adapter);
+        }
         if (getResources().getConfiguration().orientation == getResources().getConfiguration().ORIENTATION_LANDSCAPE)
         {
             mDualPane = true;
@@ -132,7 +139,7 @@ public class PersonOverview extends Fragment {
         @Override
         protected void onPostExecute(ArrayList<Person> list)
         {
-            persons = list;
+            PersonOverview.this.persons = list;
             adapter = new PersonAdapter(persons);
             mRcyclerView.setAdapter(adapter);
         }
