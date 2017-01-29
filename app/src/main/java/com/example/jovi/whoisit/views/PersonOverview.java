@@ -59,6 +59,8 @@ public class PersonOverview extends Fragment {
         if (getResources().getConfiguration().orientation == getResources().getConfiguration().ORIENTATION_LANDSCAPE)
         {
             mDualPane = true;
+        }else{
+            mDualPane = false;
         }
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRcyclerView.setLayoutManager(mLayoutManager);
